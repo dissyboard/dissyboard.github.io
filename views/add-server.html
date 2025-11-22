@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Server hinzufügen - Dissyboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        body { background-color: #202225; }
+        .card { background-color: #2f3136; border-color: #40444b; }
+        .form-control {
+            background-color: #202225;
+            border-color: #40444b;
+            color: #dcddde;
+        }
+        .form-control:focus {
+            background-color: #202225;
+            border-color: #5865F2;
+            color: #dcddde;
+            box-shadow: 0 0 0 0.25rem rgba(88, 101, 242, .25);
+        }
+        .btn-primary { background-color: #5865F2; border-color: #5865F2; }
+        .btn-primary:hover { background-color: #4752c4; border-color: #4752c4; }
+    </style>
+</head>
+<body class="d-flex align-items-center py-4 bg-body-tertiary">
+<main class="w-100 m-auto" style="max-width: 500px;">
+    <div class="card text-white p-4">
+        <div class="card-body">
+            <h1 class="h3 mb-3 fw-normal text-center">Server hinzufügen</h1>
+            <p class="text-center text-white-50">Fülle die Felder aus, um deinen Server auf Dissyboard zu listen.</p>
+            <form action="/add-server" method="POST" enctype="multipart/form-data">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="server-name" name="serverName" placeholder="Name deines Servers" required>
+                    <label for="server-name" class="text-white-50">Server-Name</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="invite-link" name="inviteLink" placeholder="https://discord.gg/..." required>
+                    <label for="invite-link" class="text-white-50">Discord Einladungs-Link</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <textarea class="form-control" id="description" name="description" placeholder="Beschreibe deinen Server..." required style="height: 80px"></textarea>
+                    <label for="description" class="text-white-50">Beschreibung</label>
+                </div>
+                <div class="mb-3">
+                    <label for="serverImage" class="form-label text-white-50">Server-Bild (Optional)</label>
+                    <input class="form-control" type="file" id="serverImage" name="serverImage" accept="image/png, image/jpeg, image/gif">
+                </div>
+                <button class="btn btn-primary w-100 py-2" type="submit">Server einreichen</button>
+            </form>
+            <p class="mt-3 text-center"><a href="/" class="text-decoration-none">Zurück zur Startseite</a></p>
+        </div>
+    </div>
+</main>
+</body>
+</html>

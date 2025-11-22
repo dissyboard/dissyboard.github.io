@@ -1,0 +1,11 @@
+# Abhängigkeiten
+# Dieser Ordner wird bei "npm install" automatisch erstellt
+/node_modules
+
+# Geheime Umgebungsvariablen
+# Diese Datei enthält deine geheimen Schlüssel und darf niemals öffentlich sein!
+.env
+
+# Hochgeladene Benutzer-Dateien
+# Hält das Repository sauber von Benutzer-Inhalten
+/public/uploads
